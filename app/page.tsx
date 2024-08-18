@@ -38,12 +38,13 @@ export default () => {
 
   useEffect(() => {
     if (queryText) handleTranslate();
+    if (result && !queryText) return setResult("");
   }, [queryText, state.from, state.into]);
 
   return (
     <div className="grid gap-4">
       <FavoriteList />
-      <section className="grid grid-cols-2 gap-4">
+      <section className="grid gap-4 md:grid-cols-2">
         <section>
           <div className="grid border-separate gap-4 rounded-lg border bg-card p-4">
             <div className="flex items-center gap-6">

@@ -1,0 +1,20 @@
+1. [✅] initilize Project
+2. [✅] Add Header Component
+3. [✅] Add Toggle Theme Button
+4. [✅] Add Favorite List Component
+5. [✅] Add from & to Card
+6. [✅] Switch Language with Select
+7. [✅] Add Textarea 
+8. [✅] Add handleTranslate function for translate
+9. [] Responsive for Mobile
+10.[] Add global State zustand | jotai
+11.[] Convert state to globalState
+12.[] Add Favorite List function to handle translate 
+13.[] Add more Languages
+14.[] Add Copy & Bookmark & Share Button to Result Card
+15.[] Create Documents Page
+16.[] Create Bookmarks Page
+17.[] Create Support Page
+18.[] Login & Sign Up with OAuth
+19.[] Add SignIn Modal for handle authorazation
+20.[] deploy for production

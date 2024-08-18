@@ -3,9 +3,7 @@ import {
   BookmarkIcon,
   HomeIcon,
   Languages,
-  Users2,
   UsersIcon,
-  UsersRound,
 } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
@@ -22,7 +20,7 @@ const Logo = () => (
 
 const NavLinks = () => {
   return (
-    <nav className="flex items-center gap-2">
+    <nav className="hidden items-center gap-2 md:flex">
       <Link
         href={"/"}
         className={buttonVariants({ variant: "ghost", size: "sm" })}
@@ -57,7 +55,7 @@ const NavLinks = () => {
 
 export function Header() {
   return (
-    <header className="flex border-separate items-center justify-between border-b p-4">
+    <header className="flex border-separate items-center justify-between border-b p-2 md:p-4">
       <Logo />
       <NavLinks />
       <ModeToggle />
