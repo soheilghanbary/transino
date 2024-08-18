@@ -1,0 +1,45 @@
+{
+  "name": "nix",
+  "version": "2.0.1",
+  "scripts": {
+    "dev": "next dev --turbo",
+    "lint": "biome format --write .",
+    "build": "next build",
+    "start": "next start",
+    "db:push": "drizzle-kit push",
+    "db:std": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tanstack/react-query": "^5.51.23",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.33.0",
+    "hono": "^4.5.5",
+    "lucide-react": "^0.427.0",
+    "next": "14.2.5",
+    "next-auth": "^4.24.7",
+    "next-themes": "^0.3.0",
+    "postgres": "^3.4.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sonner": "^1.5.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "translate": "^3.0.0",
+    "use-debounce": "^10.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@tanstack/react-query-devtools": "^5.51.23",
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.24.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5"
+  }
+}
