@@ -8,6 +8,7 @@ import {
   UsersIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Props = {
   href: string;
@@ -16,7 +17,7 @@ type Props = {
 };
 
 const NavigationItem = ({ href, icon: Icon, label }: Props) => {
-  const pathname = window.location.pathname;
+  const pathname = usePathname();
   const isActive = pathname === href;
 
   return (
