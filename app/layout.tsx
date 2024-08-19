@@ -1,4 +1,5 @@
 import "@/assets/app.css";
+import { BottomNavigation } from "@/components/bottom-navigation";
 import { Header } from "@/components/header";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
               <Header />
               <div className="p-4">{children}</div>
             </main>
+            <BottomNavigation />
             <ToastProvider />
           </ThemeProvider>
         </QueryProvider>

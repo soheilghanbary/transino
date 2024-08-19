@@ -1,5 +1,6 @@
 "use client";
 import { FavoriteList } from "@/components/favorite-list";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -8,7 +9,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { BookmarkIcon, CopyIcon, ShareIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import t from "translate";
 import { useDebounce } from "use-debounce";
 
@@ -17,6 +20,13 @@ type TranslateProps = {
   from: string;
   into: string;
 };
+
+const languages = [
+  { value: "fa", label: "Persian" },
+  { value: "en", label: "English" },
+  { value: "fr", label: "France" },
+  { value: "ar", label: "Arabic" },
+];
 
 async function translate(props: TranslateProps) {
   return await t(props.text, { from: props.from, to: props.into });
@@ -66,10 +76,11 @@ export default () => {
                   <SelectValue placeholder="Select Language" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="fa">Persian</SelectItem>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="fr">France</SelectItem>
-                  <SelectItem value="ar">Arabic</SelectItem>
+                  {languages.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -102,15 +113,35 @@ export default () => {
                   <SelectValue placeholder="Select Language" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="fa">Persian</SelectItem>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="fr">France</SelectItem>
-                  <SelectItem value="ar">Arabic</SelectItem>
+                  {languages.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
-            <div className="min-h-32 border-separate rounded-md border bg-muted/30 p-4">
-              {result}
+            <div className="flex min-h-32 border-separate flex-col justify-between rounded-md border bg-muted/30 p-2">
+              {result && (
+                <>
+                  {result}
+                  <div className="mt-auto flex items-center gap-2">
+                    <Button
+                      variant={"ghost"}
+                      size={"icon"}
+                      onClick={() => {
+                        navigator.clipboard.writeText(result);
+                        toast.success("Copy Text to clipboard!");
+                      }}
+                    >
+                      <CopyIcon className="size-4" />
+                    </Button>
+                    <Button variant={"ghost"} size={"icon"}>
+                      <BookmarkIcon className="size-4" />
+                    </Button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>
